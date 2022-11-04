@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')%>
+  </head>
+
+  <body>
+    <div class="bg-container">
+      <%- include('../partials/nav.ejs') %>
+      <h1>Dashboard</h1>
+
+      <% rounds.forEach(round => { %>
+      <div id="round-container">
+        <p id="course-name"><%= round.course %></p>
+        <p id="date"><%= round.date %></p>
+        <p id="handicap"><%= round.handicap %></p>
+        <p id="par"><%= round.par %></p>
+        <p id="score"><%= round.score %></p>
+      </div>
+      <% }) %>
+
+      <a href="tracker/new" class="new-round">+ Add Round</a>
+    </div>
+  </body>
+</html>

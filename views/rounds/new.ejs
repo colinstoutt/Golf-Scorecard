@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')%>
+  </head>
+  <body>
+    <div class="bg-container">
+      <%- include('../partials/nav.ejs') %>
+      <h1>Add a new round</h1>
+      <form action="/tracker" method="POST">
+        <!-- course -->
+        <label for="course">COURSE</label>
+        <input type="text" name="course" />
+        <!-- date -->
+        <label for="date">DATE</label>
+        <input type="date" name="date" />
+        <!-- handicap -->
+        <label for="handicap">HANDICAP</label>
+        <input type="number" name="handicap" /><br />
+        <!-- par -->
+        <label for="par">PAR</label>
+        <% for(let i = 0; i < 3; i++){ %>
+        <input type="number" name="par" style="width: 25px" />
+        <% } %>
+        <br />
+        <!-- score -->
+        <label for="score">SCORE</label>
+        <% for(let i = 0; i < 3; i++){ %>
+        <input type="number" name="score" style="width: 25px" />
+        <% } %>
+        <br />
+        <!-- submit -->
+        <input type="submit" name="submit" value="SUBMIT" />
+      </form>
+      <a href="/tracker">Return to dashboard</a>
+    </div>
+  </body>
+</html>
