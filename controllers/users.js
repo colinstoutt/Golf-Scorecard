@@ -1,15 +1,15 @@
 // Dependencies
 const express = require("express");
+const bcrypt = require("bcrypt");
 const userRouter = express.Router();
 const User = require("../models/user.js");
-const bcrypt = require("bcrypt");
 
 module.exports = userRouter;
-
 // New (registration page)
 userRouter.get("/new", (req, res) => {
   res.render("users/new.ejs", {
     currentUser: req.session.currentUser,
+    tabTitle: "Register",
   });
 });
 

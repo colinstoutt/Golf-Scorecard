@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 const session = require("express-session");
 const methodOverride = require("method-override");
+
 // bcrypt
 const bcrypt = require("bcrypt");
 const hashedString = bcrypt.hashSync(
@@ -36,7 +37,9 @@ app.use(
     saveUninitialized: false,
   })
 );
+
 app.use(methodOverride("_method"));
+app.use(express.static("public"));
 
 // routes / controlelrs
 const userController = require("./controllers/users");
@@ -45,21 +48,16 @@ app.use("/users", userController);
 const sessionsController = require("./controllers/sessions");
 app.use("/sessions", sessionsController);
 
-// Routes / Controllers
-// app.get("/", (req, res) => {
-//   res.render("index.ejs", {
-//     currentUser: req.session.currentUser,
-//   });
-// });
-
 app.get("/", (req, res) => {
   if (req.session.currentUser) {
     res.render("dashboard.ejs", {
       currentUser: req.session.currentUser,
+      tabTitle: "Dashboard",
     });
   } else {
     res.render("index.ejs", {
       currentUser: req.session.currentUser,
+      tabTitle: "Log In",
     });
   }
 });

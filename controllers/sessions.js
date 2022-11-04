@@ -11,6 +11,7 @@ const User = require("../models/user.js");
 sessionsRouter.get("/new", (req, res) => {
   res.render("sessions/new.ejs", {
     currentUser: req.session.currentUser,
+    tabTitle: "Log In",
   });
 });
 
