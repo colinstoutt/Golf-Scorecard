@@ -41,26 +41,15 @@ app.use(
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
 
-// routes / controlelrs
+// routes / controllers
+const trackerController = require("./controllers/tracker");
+app.use("/tracker", trackerController);
+
 const userController = require("./controllers/users");
 app.use("/users", userController);
 
 const sessionsController = require("./controllers/sessions");
 app.use("/sessions", sessionsController);
-
-app.get("/", (req, res) => {
-  if (req.session.currentUser) {
-    res.render("dashboard.ejs", {
-      currentUser: req.session.currentUser,
-      tabTitle: "Dashboard",
-    });
-  } else {
-    res.render("index.ejs", {
-      currentUser: req.session.currentUser,
-      tabTitle: "Log In",
-    });
-  }
-});
 
 // listener
 app.listen(PORT, () => console.log(`server is listening on port: ${PORT}`));
