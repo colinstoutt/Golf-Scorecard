@@ -1,6 +1,5 @@
 // this file will handle the literal logging in and logging out
 // will fetch datat from database and create sessions
-
 // Dependencies
 const express = require("express");
 const bcrypt = require("bcrypt");
@@ -18,7 +17,7 @@ sessionsRouter.get("/new", (req, res) => {
 // Delete Session(logout route)
 sessionsRouter.delete("/", (req, res) => {
   req.session.destroy((error) => {
-    res.redirect("/");
+    res.redirect("/tracker");
   });
 });
 
@@ -58,7 +57,7 @@ sessionsRouter.post("/", (req, res) => {
           //   }
 
           // redirect back to our home page
-          res.redirect("/");
+          res.redirect("/tracker");
           //   res.send(`The current user is ${req.session.currentUser.email}`);
         } else {
           // if the passwords don't match
