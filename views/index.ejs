@@ -5,7 +5,12 @@
   </head>
 
   <body>
-    <%- include('./partials/nav.ejs') %>
-    <h1>Home</h1>
+    <div class="bg-container">
+      <div id="auth-container">
+        <a id="login" href="/sessions/new">LOG IN</a>
+        <div id="line"></div>
+        <a id="signup" href="/users/new">SIGN UP</a>
+      </div>
+    </div>
   </body>
 </html>
