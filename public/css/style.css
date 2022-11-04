@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: rgb(221, 73, 73);
 }
 
 html {
@@ -21,7 +22,6 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
 }
 
@@ -58,4 +58,26 @@ html {
   height: 15rem;
   width: 1px;
   margin: auto;
+}
+
+/* removing arrows on number inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#round-container {
+  width: 80rem;
+  height: 15rem;
+  padding: 2rem;
+  border: 1px solid white;
+}
+#course {
+  color: white;
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.4rem;
 }
