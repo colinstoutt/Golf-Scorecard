@@ -45,13 +45,6 @@ trackerRouter.post("/", (req, res) => {
     });
   });
 });
-// -=-create-=-
-// productRouter.post("/", (req, res) => {
-//     // actually adding the data to MongoDB Atlas
-//     Product.create(req.body, (err, createdProduct) => {
-//       res.redirect("/products");
-//     });
-//   });
 
 // edit
 
