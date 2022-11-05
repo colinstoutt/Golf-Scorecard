@@ -7,10 +7,10 @@ const User = require("../models/user.js");
 // index/dashboard
 trackerRouter.get("/", (req, res) => {
   if (req.session.currentUser) {
-    Round.find({}, (err, allRounds) => {
+    User.findById(req.session.currentUser, (err, foundUser) => {
       res.render("rounds/dashboard.ejs", {
-        rounds: allRounds,
-        currentUser: req.session.currentUser,
+        rounds: foundUser.rounds,
+        currentUser: foundUser,
         tabTitle: "Dashboard",
       });
     });
