@@ -6,7 +6,10 @@
 
   <body>
     <div class="bg-container">
-      <%- include('../partials/nav.ejs') %>
+      <p><%= currentUser.email %></p>
+      <form action="/sessions?_method=DELETE" method="POST">
+        <input type="submit" value="Log Out" />
+      </form>
       <h1>Dashboard</h1>
 
       <% rounds.forEach(round => { %>
