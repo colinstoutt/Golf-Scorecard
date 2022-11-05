@@ -2,27 +2,46 @@
 <html lang="en">
   <head>
     <%- include('../partials/head.ejs')%>
+    <br />
+    <%- include('../partials/functions.ejs')%>
   </head>
 
   <body>
     <div class="bg-container">
-      <p><%= currentUser.email %></p>
-      <form action="/sessions?_method=DELETE" method="POST">
-        <input type="submit" value="Log Out" />
-      </form>
-      <h1>Dashboard</h1>
+      <%- include('../partials/nav.ejs') %>
 
-      <% rounds.forEach(round => { %>
-      <div id="round-container">
-        <p id="course-name"><%= round.course %></p>
-        <p id="date"><%= round.date %></p>
-        <p id="handicap"><%= round.handicap %></p>
-        <p id="par"><%= round.par %></p>
-        <p id="score"><%= round.score %></p>
+      <div class="container">
+        <% rounds.forEach(round => { %>
+        <div id="round-container">
+          <table>
+            <thead>
+              <tr>
+                <th>COURSE</th>
+                <th>DATE</th>
+                <th>PAR</th>
+                <th>TOTAL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="course-name"><%= round.course %></td>
+                <td id="date"><%= convertDate(round.date) %></td>
+                <td id="par">
+                  <%= round.par.reduce((acc, value) => { return acc + value;
+                  })%>
+                </td>
+                <td id="score">
+                  <%= round.score.reduce((acc, value) => { return acc + value;
+                  }) %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <% }) %>
+
+        <a href="tracker/new" class="new-round">+ Add Round</a>
       </div>
-      <% }) %>
-
-      <a href="tracker/new" class="new-round">+ Add Round</a>
     </div>
   </body>
 </html>
