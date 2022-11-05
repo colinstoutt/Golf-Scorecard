@@ -6,17 +6,19 @@
 
   <body>
     <div class="bg-container">
-      <%- include('../partials/nav.ejs') %>
-      <h1>Login</h1>
-      <form action="/sessions" method="POST">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" />
+      <div id="auth-container">
+        <h1>Login</h1>
+        <form action="/sessions" method="POST">
+          <label for="email">Email:</label><br />
+          <input type="email" name="email" id="email" /><br />
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" />
+          <label for="password">Password:</label><br />
+          <input type="password" name="password" id="password" /><br />
 
-        <input type="submit" value="Login" />
-      </form>
+          <input type="submit" value="Log In" />
+        </form>
+        <a id="auth-a-El" href="/users/new">Not registered? Sign up here</a>
+      </div>
     </div>
   </body>
 </html>

@@ -6,17 +6,34 @@
 
   <body>
     <div class="bg-container">
-      <%- include('../partials/nav.ejs') %>
-      <h1>Register</h1>
-      <form action="/users" method="POST">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" />
+      <div id="auth-container">
+        <h1>Register</h1>
+        <form action="/users" method="POST">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" />
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" />
 
-        <input type="submit" value="Register" />
-      </form>
+          <input type="submit" value="Register" />
+        </form>
+        <a id="auth-a-El" href="/sessions/new"
+          >Already registered? Log in here</a
+        >
+      </div>
+      <!-- <div id="auth-container">
+        <h1>Login</h1>
+        <form action="/sessions" method="POST">
+          <label for="email">Email:</label><br />
+          <input type="email" name="email" id="email" /><br />
+
+          <label for="password">Password:</label><br />
+          <input type="password" name="password" id="password" /><br />
+
+          <input type="submit" value="LOG IN" />
+        </form>
+        <a href="/users/new">Not registered? Sign up here</a>
+      </div> -->
     </div>
   </body>
 </html>

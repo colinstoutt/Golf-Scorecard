@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 * {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgb(221, 73, 73);
 }
 
 html {
@@ -23,27 +24,48 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  opacity: 90%;
 }
 
 /* index.ejs */
 #auth-container {
-  width: 30rem;
-  height: 30rem;
-  border-radius: 10px;
   margin: auto;
+  width: 35rem;
+  height: 35rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  text-align: left;
+  color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding: 4rem;
+}
+#auth-container h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #68c353;
+}
+#auth-container h3 {
+  font-weight: 300;
+  font-size: 1.7rem;
+  margin: 2rem 0 1rem 0;
 }
 #login,
 #signup {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 100;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.46);
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 10rem;
+  text-align: center;
   text-decoration: none;
   border-radius: 5px;
+  display: inline;
   transition: all 0.3s;
 }
 #login:hover,
@@ -51,15 +73,63 @@ html {
   color: white;
   background-color: rgba(255, 255, 255, 0.434);
   border: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
+}
+/* sessions/new.ejs */
+#auth-container label {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-left: 0.5rem;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
-#line {
-  background-color: rgba(255, 255, 255, 0.668);
-  height: 15rem;
-  width: 1px;
-  margin: auto;
+input[type="email"],
+input[type="password"] {
+  font-size: 1.7rem;
+  font-weight: 100;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline;
+  transition: all 0.3s;
+  text-align: left;
+  padding: 0.8rem 1rem;
+  width: 27rem;
+  background: none;
+  margin: 1rem 0 0 0;
+}
+#auth-container input[type="submit"] {
+  width: 27rem;
+  padding: 0.8rem;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: none;
+  font-weight: 100;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  transition: all 0.3s;
+}
+#auth-container input[type="submit"]:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.434);
+  border: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
 }
 
+#auth-a-El {
+  font-size: 1.4rem;
+  color: #68c353;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* users/new.ejs */
+
+/* dashboard.ejs */
 /* removing arrows on number inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -76,8 +146,4 @@ input::-webkit-inner-spin-button {
 #course {
   color: white;
   font-size: 3rem;
-}
-
-p {
-  font-size: 1.4rem;
 }
