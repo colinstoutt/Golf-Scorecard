@@ -23,12 +23,12 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: inset 0 0 0 1000px rgba(41, 41, 41, 0.429);
+  box-shadow: inset 0 0 0 1000px rgba(28, 28, 28, 0.69);
   opacity: 100%;
 }
 
 .container {
-  max-width: 110rem;
+  max-width: 80rem;
   margin: 10rem auto;
 }
 
@@ -38,12 +38,25 @@ nav {
   padding: 1.5rem;
   font-size: 1.5rem;
   color: white;
-  background-color: #5a9e4b;
+  background-color: #00000068;
 }
 nav p {
-  background-color: #74cb61;
   padding: 0.5rem 2rem;
   border-radius: 10px;
+}
+#logout {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.232);
+  background: none;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  transition: background-color 0.3s, border 0.3s;
+}
+#logout:hover {
+  color: white;
+  border: 1px solid #74cb61;
+  background-color: #74cb612a;
+  cursor: pointer;
 }
 
 /* index.ejs */
@@ -52,14 +65,14 @@ nav p {
   width: 35rem;
   height: 35rem;
   border-radius: 10px;
-  background-color: white;
+  background: none;
   border: 1px solid white;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: relative;
   text-align: left;
-  color: black;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,21 +95,21 @@ nav p {
 #signup {
   font-size: 1.7rem;
   font-weight: 100;
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.232);
-
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.232);
   padding: 0.5rem 10rem;
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
   display: inline;
-  transition: all 0.3s;
+  transition: background-color 0.3s, border 0.3s;
 }
 #login:hover,
 #signup:hover {
-  color: black;
-  background-color: #68c353;
-  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  border: 1px solid #74cb61;
+  background-color: #74cb612a;
+
   cursor: pointer;
 }
 /* sessions/new.ejs */
@@ -112,13 +125,14 @@ input[type="email"],
 input[type="password"] {
   font-size: 1.7rem;
   font-weight: 100;
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.232);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.232);
+
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
   display: inline;
-  transition: all 0.3s;
+  transition: background-color 0.3s, border 0.3s;
   text-align: left;
   padding: 0.8rem 1rem;
   width: 27rem;
@@ -128,19 +142,19 @@ input[type="password"] {
 #auth-container input[type="submit"] {
   width: 27rem;
   padding: 0.8rem;
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.232);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.232);
   border-radius: 5px;
   background: none;
   font-weight: 100;
   font-size: 1.5rem;
   margin-top: 2rem;
-  transition: all 0.3s;
+  transition: background-color 0.3s, border 0.3s;
 }
 #auth-container input[type="submit"]:hover {
-  color: black;
-  background-color: #68c353;
-  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  border: 1px solid #74cb61;
+  background-color: #74cb612a;
   cursor: pointer;
 }
 
@@ -151,8 +165,6 @@ input[type="password"] {
   margin-top: 1rem;
 }
 
-/* users/new.ejs */
-
 /* rounds/new.ejs */
 /* removing arrows on number inputs */
 input::-webkit-outer-spin-button,
@@ -160,8 +172,99 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+input {
+  border: 1px solid rgb(186, 186, 186);
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+#heading {
+  color: white;
+  font-weight: 300;
+  font-size: 3rem;
+}
+.new-form {
+  background-color: white;
+  padding: 1rem;
+}
+#form-details,
+#form-performance {
+  height: 11rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+#form-details {
+  height: 13rem;
+  width: 70%;
+  padding: 1rem 2rem 0 2rem;
+}
+#form-details input {
+  margin: 0.5rem 0.5rem 0 0;
+  padding: 0.5rem;
+}
+#form-grid {
+  display: grid;
+  grid-template-columns: repeat(19, 1fr);
+  grid-template-rows: 3;
+  row-gap: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+#form-grid input {
+  text-align: center;
+}
+#hole {
+  display: flex;
+  color: grey;
+}
+#hole label {
+  margin-right: 2rem;
+}
+label[for="par"] {
+  margin-right: 3rem;
+}
+label[for="score"] {
+  margin-right: 0.65rem;
+}
 
+td p {
+  margin: 0 1rem;
+}
+
+#submit {
+  color: #74cb61;
+  border: 1px solid #74cb61;
+  background: none;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  transition: background-color 0.3s, border 0.3s;
+  margin-top: 1.5rem;
+}
+#submit:hover {
+  cursor: pointer;
+  background-color: #74cb612a;
+}
+
+#returnDash {
+  color: white;
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 5rem;
+}
 /* dashboard.ejs */
+#new-round {
+  color: #74cb61;
+  border: 1px solid #74cb61;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: background-color 0.3s, border 0.3s;
+}
+#new-round:hover {
+  background-color: #74cb612a;
+}
+
 #round-container {
   width: 80rem;
   height: 10rem;
@@ -173,7 +276,13 @@ input::-webkit-inner-spin-button {
   margin: 2rem auto 2rem auto;
   font-size: 1.4rem;
 }
-
+#round-container:first-of-type {
+  margin-top: 2.5rem;
+}
+#round-container p {
+  margin: 0;
+  padding: 0;
+}
 table {
   text-align: left;
   width: 100%;
