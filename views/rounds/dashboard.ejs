@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include('../partials/head.ejs')%>
-    <br />
-    <%- include('../partials/functions.ejs')%>
+    <%- include('../partials/head.ejs')%> <%-
+    include('../partials/functions.ejs')%>
   </head>
 
   <body>
@@ -11,6 +10,8 @@
       <%- include('../partials/nav.ejs') %>
 
       <div class="container">
+        <a href="tracker/new" id="new-round">+ Add Round</a>
+
         <% rounds.forEach(round => { %>
         <div id="round-container">
           <table>
@@ -24,23 +25,25 @@
             </thead>
             <tbody>
               <tr>
-                <td id="course-name"><%= round.course %></td>
-                <td id="date"><%= convertDate(round.date) %></td>
+                <td id="course-name"><p><%= round.course %></p></td>
+                <td id="date"><p><%= convertDate(round.date) %></p></td>
                 <td id="par">
-                  <%= round.par.reduce((acc, value) => { return acc + value;
-                  })%>
+                  <p>
+                    <%= round.par.reduce((acc, value) => { return acc + value;
+                    })%>
+                  </p>
                 </td>
                 <td id="score">
-                  <%= round.score.reduce((acc, value) => { return acc + value;
-                  }) %>
+                  <p>
+                    <%= round.score.reduce((acc, value) => { return acc + value;
+                    }) %>
+                  </p>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
         <% }) %>
-
-        <a href="tracker/new" class="new-round">+ Add Round</a>
       </div>
     </div>
   </body>
