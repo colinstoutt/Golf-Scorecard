@@ -8,46 +8,71 @@
     <div class="bg-container">
       <%- include('../partials/nav.ejs') %>
       <div class="container">
-        <div id="form-details" class="new-form">
+        <h1 id="lg-heading"><%= round.course %></h1>
+
+        <div id="show-details" class="new-form">
           <table>
             <thead>
               <tr>
-                <th><label for="course">COURSE</label></th>
-                <th><label for="date">DATE</label></th>
+                <th id="show-head"><label for="date">DATE</label></th>
                 <th><label for="handicap">HANDICAP</label></th>
+                <th><label for="netscore">NET SCORE</label></th>
+
+                <th><label for="final">FINAL</label></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><p><%= round.course %></p></td>
                 <td><p><%= convertDate(round.date) %></p></td>
                 <td><p><%= round.handicap %></p></td>
+                <td>
+                  <p name="netscore">
+                    <%= round.score.reduce((acc, value) => { return acc + value;
+                    }) - round.handicap%>
+                  </p>
+                </td>
+                <td>
+                  <p name="final">
+                    <%= round.score.reduce((acc, value) => { return acc + value;
+                    }) - round.handicap - round.par.reduce((acc, value) => {
+                    return acc + value; }) %>
+                  </p>
+                </td>
               </tr>
             </tbody>
             <br />
           </table>
         </div>
         <div id="form-performance" class="new-form">
-          <div id="form-grid">
+          <div id="show-grid" class="grid">
             <p class="grid-item">HOLE</p>
             <% for(let i = 0; i < 18; i++){ %>
             <p class="grid-item"><%= i + 1%></p>
             <% } %>
-
+            <p class="grid-item">TOTAL</p>
             <label for="par" class="grid-item">PAR</label>
             <% for(let i = 0; i < par.length; i++){ %>
             <p class="grid-item"><%= par[i] %></p>
             <% } %>
-
+            <p class="grid-item">
+              <%= round.par.reduce((acc, value) => { return acc + value; })%>
+            </p>
             <label for="score" class="grid-item">SCORE</label>
             <% for(let i = 0; i < score.length; i++){ %>
             <p class="grid-item"><%= score[i] %></p>
             <% } %>
+            <p class="grid-item">
+              <%= round.score.reduce((acc, value) => { return acc + value; })%>
+            </p>
           </div>
         </div>
         <!-- submit -->
-        <a href="/tracker/<%=round._id%>/edit">Edit</a>
-        <form action="/tracker/<%=round._id%>?_method=DELETE" method="POST">
+        <a id="edit" href="/tracker/<%=round._id%>/edit">Edit</a>
+        <form
+          id="form-delete"
+          action="/tracker/<%=round._id%>?_method=DELETE"
+          method="POST"
+        >
           <input id="delete" type="submit" value="Delete" />
         </form>
 
