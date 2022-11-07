@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')%> <%-
+    include('../partials/functions.ejs')%>
+  </head>
+  <body>
+    <div class="bg-container">
+      <%- include('../partials/nav.ejs') %>
+      <div class="container">
+        <div id="form-details" class="new-form">
+          <table>
+            <thead>
+              <tr>
+                <th><label for="course">COURSE</label></th>
+                <th><label for="date">DATE</label></th>
+                <th><label for="handicap">HANDICAP</label></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><p><%= round.course %></p></td>
+                <td><p><%= convertDate(round.date) %></p></td>
+                <td><p><%= round.handicap %></p></td>
+              </tr>
+            </tbody>
+            <br />
+          </table>
+        </div>
+        <div id="form-performance" class="new-form">
+          <div id="form-grid">
+            <p class="grid-item">HOLE</p>
+            <% for(let i = 0; i < 18; i++){ %>
+            <p class="grid-item"><%= i + 1%></p>
+            <% } %>
+
+            <label for="par" class="grid-item">PAR</label>
+            <% for(let i = 0; i < par.length; i++){ %>
+            <p class="grid-item"><%= par[i] %></p>
+            <% } %>
+
+            <label for="score" class="grid-item">SCORE</label>
+            <% for(let i = 0; i < score.length; i++){ %>
+            <p class="grid-item"><%= score[i] %></p>
+            <% } %>
+          </div>
+        </div>
+        <!-- submit -->
+        <a href="/tracker/<%=round._id%>/edit">Edit</a>
+        <form action="/tracker/<%=round._id%>?_method=DELETE" method="POST">
+          <input id="delete" type="submit" value="Delete" />
+        </form>
+
+        <a id="returnDash" href="/tracker">Return to dashboard</a>
+      </div>
+    </div>
+  </body>
+</html>
