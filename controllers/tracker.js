@@ -42,7 +42,23 @@ trackerRouter.delete("/:id", (req, res) => {
   });
 });
 
-// update
+// // update
+trackerRouter.put("/:id", (req, res) => {
+  Round.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedRound) => {
+      User.findOne({ "rounds._id": req.params.id }, (err, foundUser) => {
+        foundUser.rounds.id(req.params.id).remove();
+        foundUser.rounds.push(updatedRound);
+        foundUser.save((err, data) => {
+          res.redirect("/tracker/" + req.params.id);
+        });
+      });
+    }
+  );
+});
 
 // create
 trackerRouter.post("/", (req, res) => {
@@ -61,6 +77,9 @@ trackerRouter.get("/:id/edit", (req, res) => {
   Round.findById(req.params.id, (err, foundRound) => {
     res.render("rounds/edit.ejs", {
       currentUser: req.session.currentUser,
+      round: foundRound,
+      par: foundRound.par,
+      score: foundRound.score,
       tabTitle: "Edit",
     });
   });
