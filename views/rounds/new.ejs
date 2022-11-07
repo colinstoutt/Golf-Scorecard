@@ -21,16 +21,18 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><input type="text" name="course" /></td>
-                  <td><input type="date" name="date" /></td>
-                  <td><input type="number" name="handicap" /></td>
+                  <td><input type="text" name="course" required /></td>
+                  <td><input type="date" name="date" required /></td>
+                  <td>
+                    <input type="number" name="handicap" value="0" required />
+                  </td>
                 </tr>
               </tbody>
               <br />
             </table>
           </div>
           <div id="form-performance" class="new-form">
-            <div id="form-grid">
+            <div id="form-grid" class="grid">
               <p>HOLE</p>
               <% for(let i = 0; i < 18; i++){ %>
               <p><%= i + 1%></p>
@@ -48,7 +50,7 @@
             </div>
           </div>
           <!-- submit -->
-          <input id="submit" type="submit" name="submit" value="SUBMIT" />
+          <input id="submit" type="submit" name="submit" value="Submit" />
         </form>
         <a id="returnDash" href="/tracker">Return to dashboard</a>
       </div>
