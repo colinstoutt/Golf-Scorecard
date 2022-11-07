@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')%>
+  </head>
+
+  <body>
+    <div class="bg-container">
+      <div id="auth-container">
+        <form
+          action="/users/<%= currentUser._id %>?_method=DELETE"
+          method="POST"
+        >
+          <input id="delete-user" type="submit" value="Delete Account" />
+        </form>
+        <a id="returnDashUserDelete" href="/tracker">Return to dashboard</a>
+      </div>
+    </div>
+  </body>
+</html>
