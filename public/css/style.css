@@ -14,11 +14,13 @@ html {
 body,
 html {
   height: 100%;
+  background-color: black;
 }
 
 .bg-container {
   width: 100%;
   height: 100%;
+
   background-image: url(https://i.imgur.com/HHiKqUr.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -30,6 +32,8 @@ html {
 .container {
   max-width: 80rem;
   margin: 10rem auto;
+  height: 70%;
+  position: relative;
 }
 
 nav {
@@ -42,14 +46,28 @@ nav {
 }
 nav p {
   padding: 0.5rem 2rem;
-  border-radius: 10px;
+}
+nav a {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.232);
+  background: none;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, border 0.3s;
+  text-decoration: none;
+}
+nav a:hover {
+  color: white;
+  border: 1px solid #74cb61;
+  background-color: #74cb612a;
+  cursor: pointer;
 }
 #logout {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.232);
   background: none;
-  padding: 0.5rem 2rem;
-  border-radius: 10px;
+  padding: 1rem 2rem;
+  border-radius: 5px;
   transition: background-color 0.3s, border 0.3s;
 }
 #logout:hover {
@@ -81,7 +99,7 @@ nav p {
 #auth-container h1 {
   font-size: 3rem;
   font-weight: 300;
-  color: #68c353;
+  color: #79e361;
 }
 #auth-container h3 {
   font-weight: 300;
@@ -153,14 +171,14 @@ input[type="password"] {
 }
 #auth-container input[type="submit"]:hover {
   color: white;
-  border: 1px solid #74cb61;
+  border: 1px solid #79e361;
   background-color: #74cb612a;
   cursor: pointer;
 }
 
 #auth-a-El {
   font-size: 1.4rem;
-  color: #68c353;
+  color: #79e361;
   text-align: center;
   margin-top: 1rem;
 }
@@ -174,7 +192,7 @@ input::-webkit-inner-spin-button {
 }
 input {
   border: 1px solid rgb(186, 186, 186);
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 1.5rem;
 }
 #heading {
@@ -190,7 +208,7 @@ input {
 #form-performance {
   height: 11rem;
   margin-top: 1rem;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 #form-details {
   height: 13rem;
@@ -201,13 +219,15 @@ input {
   margin: 0.5rem 0.5rem 0 0;
   padding: 0.5rem;
 }
-#form-grid {
+.grid {
   display: grid;
-  grid-template-columns: repeat(19, 1fr);
   grid-template-rows: 3;
   row-gap: 1rem;
   font-size: 1.5rem;
   padding: 1rem;
+}
+#form-grid {
+  grid-template-columns: repeat(19, 1fr);
 }
 #form-grid input {
   text-align: center;
@@ -231,11 +251,11 @@ td p {
 }
 
 #submit {
-  color: #74cb61;
-  border: 1px solid #74cb61;
+  color: #79e361;
+  border: 1px solid #79e361;
   background: none;
   padding: 0.8rem 2rem;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 1.4rem;
   transition: background-color 0.3s, border 0.3s;
   margin-top: 1.5rem;
@@ -249,14 +269,22 @@ td p {
   color: white;
   font-size: 1.4rem;
   position: absolute;
-  bottom: 5rem;
+  left: 0;
+  bottom: 0;
 }
 /* dashboard.ejs */
+#lg-heading {
+  font-weight: 100;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 1rem;
+}
 #new-round {
-  color: #74cb61;
-  border: 1px solid #74cb61;
+  display: inline-block;
+  color: #79e361;
+  border: 1px solid #79e361;
   padding: 1rem 2rem;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 1.4rem;
   text-decoration: none;
   transition: background-color 0.3s, border 0.3s;
@@ -267,20 +295,21 @@ td p {
 
 #round-container {
   width: 80rem;
-  height: 10rem;
+  height: 9rem;
   padding: 2rem;
   border: 1px solid white;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: white;
   color: black;
-  margin: 2rem auto 2rem auto;
+  margin: 1rem auto;
   font-size: 1.4rem;
 }
-#round-container:first-of-type {
-  margin-top: 2.5rem;
+#show-link {
+  text-decoration: none;
 }
+
 #round-container p {
-  margin: 0;
+  margin: 0.5rem 0;
   padding: 0;
 }
 table {
@@ -298,4 +327,75 @@ thead th:nth-child(1) {
 table td {
   font-size: 1.8rem;
   font-weight: 300;
+}
+/* show.ejs */
+#show-head {
+  width: 30%;
+}
+#show-grid {
+  font-weight: 300;
+  grid-template-columns: repeat(20, 1fr);
+}
+.grid-item:nth-child(-n + 20) {
+  color: rgb(188, 188, 188);
+}
+.grid-item:nth-child(n + 21):nth-child(-n + 40) {
+  color: grey;
+}
+.grid-item:nth-child(n + 41):nth-child(-n + 58) {
+  color: black;
+}
+
+#edit {
+  color: #79e361;
+  border: 1px solid #79e361;
+  background: none;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  transition: background-color 0.3s, border 0.3s;
+  margin: 1rem 0 0 0;
+  display: inline;
+  text-decoration: none;
+}
+#edit:hover {
+  cursor: pointer;
+  background-color: #74cb612a;
+}
+
+#show-details {
+  height: 9rem;
+  border-radius: 5px;
+  width: 60%;
+  padding-right: 4rem;
+  margin-bottom: 1rem;
+}
+#show-details label {
+  margin-left: 1rem;
+}
+
+#form-delete {
+  display: inline;
+}
+#delete {
+  color: #e53f3f;
+  border: 1px solid #e53f3f;
+  background: none;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  transition: background-color 0.3s, border 0.3s;
+  margin: 1rem 0 0 1rem;
+}
+#delete:hover {
+  cursor: pointer;
+  background-color: #c92c2c34;
+}
+
+/* delete user */
+#returnDashUserDelete {
+  margin-top: 3rem;
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
 }
