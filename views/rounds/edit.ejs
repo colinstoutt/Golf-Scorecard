@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')%>
+  </head>
+  <body>
+    <div class="bg-container">
+      <%- include('../partials/nav.ejs') %>
+      <div class="container">
+        <h1 id="heading">Add a new round</h1>
+
+        <form action="/tracker" method="POST">
+          <div id="form-details" class="new-form">
+            <table>
+              <thead>
+                <tr>
+                  <th><label for="course">COURSE</label></th>
+                  <th><label for="date">DATE</label></th>
+                  <th><label for="handicap">HANDICAP</label></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" name="course" /></td>
+                  <td><input type="date" name="date" /></td>
+                  <td><input type="number" name="handicap" /></td>
+                </tr>
+              </tbody>
+              <br />
+            </table>
+          </div>
+          <div id="form-performance" class="new-form">
+            <div id="form-grid">
+              <p>HOLE</p>
+              <% for(let i = 0; i < 18; i++){ %>
+              <p><%= i + 1%></p>
+              <% } %>
+
+              <label for="par">PAR</label>
+              <% for(let i = 0; i < 18; i++){ %>
+              <input type="number" name="par" style="width: 25px" />
+              <% } %>
+
+              <label for="score">SCORE</label>
+              <% for(let i = 0; i < 18; i++){ %>
+              <input type="number" name="score" style="width: 25px" />
+              <% } %>
+            </div>
+          </div>
+          <!-- submit -->
+          <input id="submit" type="submit" name="submit" value="SUBMIT" />
+        </form>
+        <a id="returnDash" href="/tracker">Return to dashboard</a>
+      </div>
+    </div>
+  </body>
+</html>
