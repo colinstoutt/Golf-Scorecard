@@ -11,7 +11,7 @@
   <% } %>
 </nav> -->
 <nav>
-  <p><%= currentUser.email %></p>
+  <a href="/users/<%= currentUser._id %>"> <p><%= currentUser.email %></p></a>
   <form action="/sessions?_method=DELETE" method="POST">
     <input id="logout" type="submit" value="Log Out" />
   </form>
