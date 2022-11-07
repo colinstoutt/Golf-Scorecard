@@ -10,16 +10,7 @@
       <%- include('../partials/nav.ejs') %>
 
       <div class="container">
-        <h1
-          style="
-            font-weight: 100;
-            font-size: 4rem;
-            color: white;
-            margin-bottom: 2rem;
-          "
-        >
-          Dashboard
-        </h1>
+        <h1 id="lg-heading">Dashboard</h1>
         <a href="tracker/new" id="new-round">+ Add Round</a>
 
         <% rounds.forEach(round => { %>
@@ -31,8 +22,8 @@
                   <th>COURSE</th>
                   <th>DATE</th>
                   <th>PAR</th>
-                  <th>TOTAL</th>
                   <th>SCORE</th>
+                  <th>FINAL</th>
                 </tr>
               </thead>
               <tbody>
@@ -45,13 +36,13 @@
                       })%>
                     </p>
                   </td>
-                  <td id="total">
+                  <td id="score">
                     <p>
                       <%= round.score.reduce((acc, value) => { return acc +
                       value; }) - round.handicap %>
                     </p>
                   </td>
-                  <td>
+                  <td id="final">
                     <%= round.score.reduce((acc, value) => { return acc + value;
                     }) - round.handicap - round.par.reduce((acc, value) => {
                     return acc + value; }) %>
