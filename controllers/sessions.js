@@ -31,7 +31,9 @@ sessionsRouter.post("/", (req, res) => {
     (error, foundUser) => {
       // send error message if no user is found
       if (!foundUser) {
-        res.send(`Invalid email or password.`);
+        res.render("sessions/invalid.ejs", {
+          tabTitle: "invalid",
+        });
       } else {
         // If a user has been found
         // compare the given password with the hashed password we have stored
@@ -61,7 +63,9 @@ sessionsRouter.post("/", (req, res) => {
           //   res.send(`The current user is ${req.session.currentUser.email}`);
         } else {
           // if the passwords don't match
-          res.send("Invalid email or password.");
+          res.render("sessions/invalid.ejs", {
+            tabTitle: "invalid",
+          });
         }
       }
     }
