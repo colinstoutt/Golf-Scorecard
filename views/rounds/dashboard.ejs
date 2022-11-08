@@ -19,11 +19,11 @@
             <table>
               <thead>
                 <tr>
-                  <th>COURSE</th>
-                  <th>DATE</th>
-                  <th>PAR</th>
-                  <th>SCORE</th>
-                  <th>FINAL</th>
+                  <th>Course</th>
+                  <th>Date</th>
+                  <th>Par</th>
+                  <th>Score</th>
+                  <th>Final</th>
                 </tr>
               </thead>
               <tbody>
@@ -31,18 +31,18 @@
                   <td id="course-name"><p><%= round.course %></p></td>
                   <td id="date"><p><%= convertDate(round.date) %></p></td>
                   <td id="par">
-                    <p>
+                    <p class="color-par">
                       <%= round.par.reduce((acc, value) => { return acc + value;
                       })%>
                     </p>
                   </td>
                   <td id="score">
-                    <p>
+                    <p class="color-score">
                       <%= round.score.reduce((acc, value) => { return acc +
                       value; }) - round.handicap %>
                     </p>
                   </td>
-                  <td id="final">
+                  <td class="color-final" id="final">
                     <%= round.score.reduce((acc, value) => { return acc + value;
                     }) - round.handicap - round.par.reduce((acc, value) => {
                     return acc + value; }) %>
@@ -55,5 +55,12 @@
         <% }) %>
       </div>
     </div>
+    <script>
+      const final = document.getElementById("final");
+
+      if ((final.textContent = "0")) {
+        final.textContent = "Even";
+      }
+    </script>
   </body>
 </html>

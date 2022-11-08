@@ -14,25 +14,29 @@
           <table>
             <thead>
               <tr>
-                <th id="show-head"><label for="date">DATE</label></th>
-                <th><label for="handicap">HANDICAP</label></th>
-                <th><label for="netscore">NET SCORE</label></th>
+                <th id="show-date"><label for="date">Date</label></th>
+                <th id="show-handicap-head">
+                  <label for="handicap">Handicap</label>
+                </th>
 
-                <th><label for="final">FINAL</label></th>
+                <th id="score-head"><label for="netscore">Net Score</label></th>
+
+                <th><label for="final">Final</label></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><p><%= convertDate(round.date) %></p></td>
-                <td><p><%= round.handicap %></p></td>
+                <td id="show-handicap"><p><%= round.handicap %></p></td>
+
                 <td>
-                  <p name="netscore">
+                  <p id="show-score" class="color-score" name="netscore">
                     <%= round.score.reduce((acc, value) => { return acc + value;
                     }) - round.handicap%>
                   </p>
                 </td>
                 <td>
-                  <p name="final">
+                  <p class="color-final" id="show-final" name="final">
                     <%= round.score.reduce((acc, value) => { return acc + value;
                     }) - round.handicap - round.par.reduce((acc, value) => {
                     return acc + value; }) %>
@@ -79,5 +83,31 @@
         <a id="returnDash" href="/tracker">Return to dashboard</a>
       </div>
     </div>
+    <script>
+      const showFinal = document.getElementById("show-final");
+
+      if ((showFinal.textContent = "0")) {
+        showFinal.textContent = "Even";
+      }
+
+      const showHandicapHead = document.getElementById("show-handicap-head");
+      const showHandicap = document.getElementById("show-handicap");
+      const showScoreHead = document.getElementById("score-head");
+      const showDate = document.getElementById("show-date");
+      const showDetails = document.getElementById("show-details");
+
+      if (showHandicap.textContent === "0") {
+        showHandicap.classList.add("hidden");
+        showHandicapHead.classList.add("hidden");
+        showScoreHead.textContent = "Score";
+        showDetails.style.width = "40%";
+        showDate.style.width = "50%";
+      }
+      // if (Number(showFinal) < 0) {
+      //   showFinal.style.color = "blue";
+      // } else if (Number(showFinal) > 0) {
+      //   showFinal.style.color = "red";
+      // }
+    </script>
   </body>
 </html>

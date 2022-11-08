@@ -134,7 +134,6 @@ nav a:hover {
 #auth-container label {
   font-size: 1.7rem;
   font-weight: 300;
-  margin-left: 0.5rem;
   display: inline-block;
   margin-top: 1rem;
 }
@@ -182,7 +181,11 @@ input[type="password"] {
   text-align: center;
   margin-top: 1rem;
 }
-
+#invalid {
+  text-align: center;
+  color: red;
+  font-size: 1.4rem;
+}
 /* rounds/new.ejs */
 /* removing arrows on number inputs */
 input::-webkit-outer-spin-button,
@@ -244,10 +247,6 @@ label[for="par"] {
 }
 label[for="score"] {
   margin-right: 0.65rem;
-}
-
-td p {
-  margin: 0 1rem;
 }
 
 #submit {
@@ -329,9 +328,10 @@ table td {
   font-weight: 300;
 }
 /* show.ejs */
-#show-head {
+#show-date {
   width: 30%;
 }
+
 #show-grid {
   font-weight: 300;
   grid-template-columns: repeat(20, 1fr);
@@ -342,7 +342,7 @@ table td {
 .grid-item:nth-child(n + 21):nth-child(-n + 40) {
   color: grey;
 }
-.grid-item:nth-child(n + 41):nth-child(-n + 58) {
+.grid-item:nth-child(n + 41):nth-child(-n + 60) {
   color: black;
 }
 
@@ -370,10 +370,10 @@ table td {
   padding-right: 4rem;
   margin-bottom: 1rem;
 }
-#show-details label {
+
+#show-details table {
   margin-left: 1rem;
 }
-
 #form-delete {
   display: inline;
 }
@@ -399,3 +399,18 @@ table td {
   font-size: 1.4rem;
   text-align: center;
 }
+
+.hidden {
+  display: none;
+}
+/* 
+.color-par {
+  color: rgb(226, 163, 38);
+}
+
+.color-score {
+  color: #46ac30;
+}
+.color-final {
+  color: rgb(18, 136, 205);
+} */
