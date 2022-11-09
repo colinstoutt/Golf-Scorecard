@@ -8,9 +8,8 @@
   <body>
     <div class="bg-container">
       <%- include('../partials/nav.ejs') %>
-
-      <div class="container">
-        <h1 id="lg-heading">Dashboard</h1>
+      <div id="dash-container" class="container">
+        <h1 id="dash-heading" class="lg-heading">Dashboard</h1>
         <a href="tracker/new" id="new-round">+ Add Round</a>
 
         <% rounds.forEach(round => { %>
@@ -56,11 +55,11 @@
       </div>
     </div>
     <script>
-      const final = document.getElementById("final");
+      // const final = document.getElementById("final");
 
-      if ((final.textContent = "0")) {
-        final.textContent = "Even";
-      }
+      // if ((final.textContent = "0")) {
+      //   final.textContent = "Even";
+      // }
     </script>
   </body>
 </html>

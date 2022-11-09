@@ -30,7 +30,7 @@ html {
 }
 
 .container {
-  max-width: 80rem;
+  max-width: 90rem;
   margin: 10rem auto;
   height: 70%;
   position: relative;
@@ -215,7 +215,7 @@ input {
 }
 #form-details {
   height: 10rem;
-  width: 70%;
+  width: 60%;
   padding: 1rem 2rem 0 2rem;
 }
 #form-details input {
@@ -272,13 +272,27 @@ label[for="score"] {
   bottom: 0;
 }
 /* dashboard.ejs */
-#lg-heading {
+#dash-heading {
+  margin-left: 5rem;
+}
+.lg-heading {
   font-weight: 100;
   font-size: 4rem;
   color: white;
   margin-bottom: 1rem;
 }
+#dash-container {
+  max-width: 90rem;
+  height: 75%;
+  padding-top: 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.119);
+  border-radius: 5px;
+  background-color: #0000002b;
+  overflow: scroll;
+  margin-top: 8rem;
+}
 #new-round {
+  margin-left: 5rem;
   display: inline-block;
   color: #79e361;
   border: 1px solid #79e361;
@@ -300,7 +314,7 @@ label[for="score"] {
   border-radius: 5px;
   background-color: white;
   color: black;
-  margin: 1rem auto;
+  margin: 1rem 5rem;
   font-size: 1.4rem;
 }
 #show-link {
@@ -369,6 +383,9 @@ table td {
   width: 60%;
   padding-right: 4rem;
   margin-bottom: 1rem;
+}
+#show-par-head {
+  width: 10%;
 }
 
 #show-details table {
