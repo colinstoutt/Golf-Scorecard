@@ -95,6 +95,7 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   padding: 4rem;
+  background-color: #0000002b;
 }
 #auth-container h1 {
   font-size: 3rem;
@@ -288,9 +289,14 @@ label[for="score"] {
   border: 1px solid rgba(255, 255, 255, 0.119);
   border-radius: 5px;
   background-color: #0000002b;
-  overflow: scroll;
+  overflow-y: scroll;
+
   margin-top: 8rem;
 }
+#dash-container::-webkit-scrollbar {
+  display: none;
+}
+
 #new-round {
   margin-left: 5rem;
   display: inline-block;
@@ -330,7 +336,7 @@ table {
   width: 100%;
 }
 thead th {
-  color: rgb(188, 188, 188);
+  color: rgb(160, 160, 160);
   font-weight: 300;
   font-size: 1.8rem;
 }
@@ -351,7 +357,7 @@ table td {
   grid-template-columns: repeat(20, 1fr);
 }
 .grid-item:nth-child(-n + 20) {
-  color: rgb(188, 188, 188);
+  color: rgb(160, 160, 160);
 }
 .grid-item:nth-child(n + 21):nth-child(-n + 40) {
   color: grey;
