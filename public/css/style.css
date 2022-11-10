@@ -14,7 +14,7 @@ html {
 body,
 html {
   height: 100%;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .bg-container {
@@ -53,11 +53,10 @@ nav a {
   background: none;
   padding: 0.5rem 2rem;
   border-radius: 5px;
-  transition: background-color 0.3s, border 0.3s;
+  /* transition: background-color 0.3s, border 0.3s; */
   text-decoration: none;
 }
 nav a:hover {
-  color: white;
   border: 1px solid #74cb61;
   background-color: #74cb612a;
   cursor: pointer;
@@ -68,7 +67,7 @@ nav a:hover {
   background: none;
   padding: 1rem 2rem;
   border-radius: 5px;
-  transition: background-color 0.3s, border 0.3s;
+  /* transition: background-color 0.3s, border 0.3s; */
 }
 #logout:hover {
   color: white;
@@ -121,7 +120,7 @@ nav a:hover {
   text-decoration: none;
   border-radius: 5px;
   display: inline;
-  transition: background-color 0.3s, border 0.3s;
+  /* transition: background-color 0.3s, border 0.3s; */
 }
 #login:hover,
 #signup:hover {
@@ -150,7 +149,7 @@ input[type="password"] {
   text-decoration: none;
   border-radius: 5px;
   display: inline;
-  transition: background-color 0.3s, border 0.3s;
+  /* transition: background-color 0.3s, border 0.3s; */
   text-align: left;
   padding: 0.8rem 1rem;
   width: 27rem;
@@ -167,7 +166,7 @@ input[type="password"] {
   font-weight: 100;
   font-size: 1.5rem;
   margin-top: 2rem;
-  transition: background-color 0.3s, border 0.3s;
+  /* transition: background-color 0.3s, border 0.3s; */
 }
 #auth-container input[type="submit"]:hover {
   color: white;
@@ -257,7 +256,7 @@ label[for="score"] {
   padding: 0.8rem 2rem;
   border-radius: 5px;
   font-size: 1.4rem;
-  transition: background-color 0.3s, border 0.3s;
+  /* transition: background-color 0.3s, border 0.3s; */
   margin-top: 1.5rem;
 }
 #submit:hover {
@@ -306,7 +305,7 @@ label[for="score"] {
   border-radius: 5px;
   font-size: 1.4rem;
   text-decoration: none;
-  transition: background-color 0.3s, border 0.3s;
+  /* transition: background-color 0.3s, border 0.3s; */
 }
 #new-round:hover {
   background-color: #74cb612a;
@@ -373,7 +372,7 @@ table td {
   padding: 0.8rem 2rem;
   border-radius: 5px;
   font-size: 1.4rem;
-  transition: background-color 0.3s, border 0.3s;
+  /* transition: background-color 0.3s, border 0.3s; */
   margin: 1rem 0 0 0;
   display: inline;
   text-decoration: none;
@@ -407,8 +406,8 @@ table td {
   padding: 0.8rem 2rem;
   border-radius: 5px;
   font-size: 1.4rem;
-  transition: background-color 0.3s, border 0.3s;
   margin: 1rem 0 0 1rem;
+  /* transition: background-color 0.3s, border 0.3s; */
 }
 #delete:hover {
   cursor: pointer;
